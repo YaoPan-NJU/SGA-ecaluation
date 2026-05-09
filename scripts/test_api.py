@@ -3,8 +3,12 @@
 """
 import os
 import requests
+from dotenv import load_dotenv
 
-API_BASE_URL = "https://token-plan-ams.xiaomimimo.com/v1"
+# 加载.env文件（如果存在）
+load_dotenv()
+
+API_BASE_URL = os.environ.get("MIMO_API_BASE_URL", "https://token-plan-ams.xiaomimimo.com/v1")
 API_KEY = os.environ.get("MIMO_API_KEY", "")
 
 def test_api_connection():

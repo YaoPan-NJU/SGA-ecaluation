@@ -22,6 +22,18 @@ pip install -r requirements.txt
 ```
 
 ### 2. 配置API密钥
+
+**方式一：使用.env文件（推荐）**
+```bash
+# 复制示例文件
+cp .env.example .env
+
+# 编辑.env文件，填入您的API密钥
+# Windows: notepad .env
+# Linux/Mac: nano .env
+```
+
+**方式二：设置环境变量**
 ```bash
 # Windows PowerShell
 $env:MIMO_API_KEY="your-api-key-here"
@@ -29,6 +41,10 @@ $env:MIMO_API_KEY="your-api-key-here"
 # Linux/Mac
 export MIMO_API_KEY="your-api-key-here"
 ```
+
+**方式三：系统环境变量（永久生效）**
+- Windows: 系统属性 → 环境变量 → 新建 `MIMO_API_KEY`
+- Linux/Mac: 在 `~/.bashrc` 或 `~/.zshrc` 中添加 `export MIMO_API_KEY="your-key"`
 
 ### 3. 测试连接
 ```bash

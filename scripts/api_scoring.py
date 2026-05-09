@@ -6,11 +6,15 @@ import os
 import time
 import requests
 from typing import Dict, Any
+from dotenv import load_dotenv
+
+# 加载.env文件（如果存在）
+load_dotenv()
 
 # API配置
-API_BASE_URL = "https://token-plan-ams.xiaomimimo.com/v1"
-API_MODEL = "mimo-v2.5-pro"
-API_KEY = os.environ.get("MIMO_API_KEY", "")  # 从环境变量读取
+API_BASE_URL = os.environ.get("MIMO_API_BASE_URL", "https://token-plan-ams.xiaomimimo.com/v1")
+API_MODEL = os.environ.get("MIMO_API_MODEL", "mimo-v2.5-pro")
+API_KEY = os.environ.get("MIMO_API_KEY", "")  # 从环境变量或.env文件读取
 
 def build_scoring_prompt(scheme_data: Dict[str, Any], scheme_id: str) -> str:
     """
